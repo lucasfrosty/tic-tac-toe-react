@@ -10,6 +10,8 @@ const SquareContainer = styled('button')`
   border-bottom: ${(props: IProps) => (props.index === 7 || props.index === 8 || props.index === 9) ? 0 : '2px solid #000'};
   border-left: ${(props: IProps) => (props.index === 1 || props.index === 4 || props.index === 7) ? 0 : '2px solid #000'};
   box-sizing: border-box;
+  outline: none;
+  cursor: pointer;
 
 
   span {
