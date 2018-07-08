@@ -10,29 +10,18 @@ const Container = styled('div')`
   flex-wrap: wrap;
 `;
 
-interface State {
-  matrix: string[]
+interface Props {
+  clickHandler: (index: number) => void;
+  matrix: string[];
 }
-class Board extends React.Component<any, State> {
-  state = {
-    matrix: [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
-  }
-
-  clickHandler = (index: number): void => {
-    this.setState((prevState) => {
-      const oldMatrix = [...prevState.matrix];
-      oldMatrix[index] = 'X';
-
-      return ({
-        matrix: oldMatrix,
-      })
-    });
-  }
+class Board extends React.Component<Props, {}> {
 
   render() {
+    const { clickHandler, matrix } = this.props;
+
     const squares: JSX.Element[] = [];
     for (let i = 1; i < 10; i++) {
-      squares.push(<Square key={i} onClick={this.clickHandler} value={this.state.matrix[i]} index={i} />);
+      squares.push(<Square key={i} onClick={clickHandler} value={matrix[i]} index={i} />);
     }
 
     return (
