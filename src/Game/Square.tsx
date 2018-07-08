@@ -30,7 +30,7 @@ interface Props {
 
 function Square({ index, value, onClick }: Props) {
   return (
-    <SquareContainer onClick={() => onClick(index)} index={index}>
+    <SquareContainer onClick={() => onClick(index - 1)} index={index}>
       <span>{value}</span>
     </SquareContainer>
   )
