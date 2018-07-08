@@ -24,12 +24,14 @@ const SquareContainer = styled('button')`
 
 interface Props {
   index: number;
+  value?: string;
+  onClick: (index: number) => void;
 }
 
-function Square({ index }: Props) {
+function Square({ index, value, onClick }: Props) {
   return (
-    <SquareContainer index={index}>
-      <span>{' '}</span>
+    <SquareContainer onClick={() => onClick(index)} index={index}>
+      <span>{value}</span>
     </SquareContainer>
   )
 }

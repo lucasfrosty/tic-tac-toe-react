@@ -12,6 +12,7 @@
   },
   "rules": {
     "member-access": false,
-    "interface-name": false
+    "interface-name": false,
+    "jsx-no-lambda": false
   }
 }

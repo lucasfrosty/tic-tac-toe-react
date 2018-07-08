@@ -10,11 +10,29 @@ const Container = styled('div')`
   flex-wrap: wrap;
 `;
 
-class Board extends React.Component {
+interface State {
+  matrix: string[]
+}
+class Board extends React.Component<any, State> {
+  state = {
+    matrix: [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
+  }
+
+  clickHandler = (index: number): void => {
+    this.setState((prevState) => {
+      const oldMatrix = [...prevState.matrix];
+      oldMatrix[index] = 'X';
+
+      return ({
+        matrix: oldMatrix,
+      })
+    });
+  }
+
   render() {
     const squares: JSX.Element[] = [];
     for (let i = 1; i < 10; i++) {
-      squares.push(<Square key={i} index={i} />);
+      squares.push(<Square key={i} onClick={this.clickHandler} value={this.state.matrix[i]} index={i} />);
     }
 
     return (
