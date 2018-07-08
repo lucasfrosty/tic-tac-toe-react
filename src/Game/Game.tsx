@@ -1,11 +1,11 @@
 import * as React from 'react';
 import Board from './Board'
 
-interface IProps {
+interface Props {
   getBackToTheMenu: () => void,
 }
 
-class Game extends React.Component<IProps, {}> {
+class Game extends React.Component<Props, {}> {
 
   render() {
     return (

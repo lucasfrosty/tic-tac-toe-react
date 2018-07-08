@@ -1,13 +1,13 @@
 import * as React from 'react';
 import Game from './Game'
 
-interface IState {
+interface State {
   gameStarted: boolean,
 }
 
-class App extends React.Component<any, IState> {
+class App extends React.Component<any, State> {
   state = {
-    gameStarted: true,
+    gameStarted: false,
   }
 
   startGame = (): void => {
